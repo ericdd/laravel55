@@ -1,0 +1,57 @@
++--------+-----------+-------------------------------+----------------------+---------------------------------------------------------------+----------------------------------------------+
+| Domain | Method    | URI                           | Name                 | Action                                                        | Middleware                                   |
++--------+-----------+-------------------------------+----------------------+---------------------------------------------------------------+----------------------------------------------+
+|        | GET|HEAD  | /                             |                      | Closure                                                       | web                                          |
+|        | GET|HEAD  | _debugbar/assets/javascript   | debugbar.assets.js   | Barryvdh\Debugbar\Controllers\AssetController@js              | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/assets/stylesheets  | debugbar.assets.css  | Barryvdh\Debugbar\Controllers\AssetController@css             | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/clockwork/{id}      | debugbar.clockwork   | Barryvdh\Debugbar\Controllers\OpenHandlerController@clockwork | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | _debugbar/open                | debugbar.openhandler | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle    | Barryvdh\Debugbar\Middleware\DebugbarEnabled |
+|        | GET|HEAD  | api/user                      |                      | Closure                                                       | api,auth:api                                 |
+|        | GET|HEAD  | auth                          |                      | App\Http\Controllers\Admin\TestController@auth                | web                                          |
+|        | GET|HEAD  | conf                          |                      | App\Http\Controllers\Admin\TestController@conf                | web                                          |
+|        | GET|HEAD  | home                          |                      | Closure                                                       | web                                          |
+|        | GET|HEAD  | info                          |                      | App\Http\Controllers\Admin\TestController@info                | web                                          |
+|        | POST      | login                         |                      | App\Http\Controllers\Admin\UserController@login               | web                                          |
+|        | GET|HEAD  | login                         |                      | App\Http\Controllers\Admin\UserController@login               | web                                          |
+|        | GET|HEAD  | logout                        |                      | App\Http\Controllers\Admin\UserController@logout              | web,auth,isLogined                           |
+|        | POST      | permissions                   | permissions.store    | App\Http\Controllers\Admin\PermissionController@store         | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | permissions                   | permissions.index    | App\Http\Controllers\Admin\PermissionController@index         | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | permissions/create            | permissions.create   | App\Http\Controllers\Admin\PermissionController@create        | web,auth,isLogined,Closure                   |
+|        | DELETE    | permissions/{permission}      | permissions.destroy  | App\Http\Controllers\Admin\PermissionController@destroy       | web,auth,isLogined,Closure                   |
+|        | PUT|PATCH | permissions/{permission}      | permissions.update   | App\Http\Controllers\Admin\PermissionController@update        | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | permissions/{permission}      | permissions.show     | App\Http\Controllers\Admin\PermissionController@show          | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | permissions/{permission}/edit | permissions.edit     | App\Http\Controllers\Admin\PermissionController@edit          | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | pluck                         |                      | App\Http\Controllers\Admin\TestController@pluck               | web                                          |
+|        | GET|HEAD  | posts                         | posts.index          | App\Http\Controllers\Admin\PostController@index               | web,auth,isLogined                           |
+|        | POST      | posts                         | posts.store          | App\Http\Controllers\Admin\PostController@store               | web,auth,isLogined                           |
+|        | GET|HEAD  | posts/create                  | posts.create         | App\Http\Controllers\Admin\PostController@create              | web,auth,isLogined                           |
+|        | DELETE    | posts/{post}                  | posts.destroy        | App\Http\Controllers\Admin\PostController@destroy             | web,auth,isLogined                           |
+|        | PUT|PATCH | posts/{post}                  | posts.update         | App\Http\Controllers\Admin\PostController@update              | web,auth,isLogined                           |
+|        | GET|HEAD  | posts/{post}                  | posts.show           | App\Http\Controllers\Admin\PostController@show                | web,auth,isLogined                           |
+|        | GET|HEAD  | posts/{post}/edit             | posts.edit           | App\Http\Controllers\Admin\PostController@edit                | web,auth,isLogined                           |
+|        | POST      | resetpwd                      |                      | App\Http\Controllers\Admin\UserController@resetpwd            | web,auth,isLogined                           |
+|        | GET|HEAD  | resetpwd                      |                      | App\Http\Controllers\Admin\UserController@resetpwd            | web,auth,isLogined                           |
+|        | GET|HEAD  | roles                         | roles.index          | App\Http\Controllers\Admin\RoleController@index               | web,auth,isLogined,Closure                   |
+|        | POST      | roles                         | roles.store          | App\Http\Controllers\Admin\RoleController@store               | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | roles/create                  | roles.create         | App\Http\Controllers\Admin\RoleController@create              | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | roles/{role}                  | roles.show           | App\Http\Controllers\Admin\RoleController@show                | web,auth,isLogined,Closure                   |
+|        | PUT|PATCH | roles/{role}                  | roles.update         | App\Http\Controllers\Admin\RoleController@update              | web,auth,isLogined,Closure                   |
+|        | DELETE    | roles/{role}                  | roles.destroy        | App\Http\Controllers\Admin\RoleController@destroy             | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | roles/{role}/edit             | roles.edit           | App\Http\Controllers\Admin\RoleController@edit                | web,auth,isLogined,Closure                   |
+|        | GET|HEAD  | select                        |                      | App\Http\Controllers\Admin\TestController@select              | web                                          |
+|        | GET|HEAD  | sess                          |                      | App\Http\Controllers\Admin\TestController@sess                | web                                          |
+|        | GET|HEAD  | sess1                         |                      | App\Http\Controllers\Admin\TestController@sess1               | web                                          |
+|        | GET|HEAD  | sess2                         |                      | App\Http\Controllers\Admin\TestController@sess2               | web                                          |
+|        | GET|HEAD  | sess3                         |                      | App\Http\Controllers\Admin\TestController@sess3               | web                                          |
+|        | GET|HEAD  | test                          |                      | App\Http\Controllers\Admin\TestController@index               | web                                          |
+|        | GET|HEAD  | test/table                    |                      | App\Http\Controllers\Admin\TestController@table               | web                                          |
+|        | GET|HEAD  | update                        |                      | App\Http\Controllers\Admin\TestController@update              | web                                          |
+|        | GET|HEAD  | users                         | users.index          | App\Http\Controllers\Admin\UserController@index               | web,auth,isLogined                           |
+|        | POST      | users                         | users.store          | App\Http\Controllers\Admin\UserController@store               | web,auth,isLogined                           |
+|        | GET|HEAD  | users/create                  | users.create         | App\Http\Controllers\Admin\UserController@create              | web,auth,isLogined                           |
+|        | GET|HEAD  | users/info                    |                      | App\Http\Controllers\Admin\UserController@info                | web,auth,isLogined                           |
+|        | GET|HEAD  | users/{user}                  | users.show           | App\Http\Controllers\Admin\UserController@show                | web,auth,isLogined                           |
+|        | PUT|PATCH | users/{user}                  | users.update         | App\Http\Controllers\Admin\UserController@update              | web,auth,isLogined                           |
+|        | DELETE    | users/{user}                  | users.destroy        | App\Http\Controllers\Admin\UserController@destroy             | web,auth,isLogined                           |
+|        | GET|HEAD  | users/{user}/edit             | users.edit           | App\Http\Controllers\Admin\UserController@edit                | web,auth,isLogined                           |
++--------+-----------+-------------------------------+----------------------+---------------------------------------------------------------+----------------------------------------------+

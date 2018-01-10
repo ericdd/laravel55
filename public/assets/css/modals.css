@@ -1,0 +1,29 @@
+.modal {
+    top:10%;
+    margin:0 auto;
+}
+
+.modal-500 {
+    top: 8%;
+    width:500px !important;
+}
+
+.modal-650 {
+    top: 8%;
+    width:650px !important;
+}
+
+.modal-700 {
+    top: 8%;
+    width:700px !important;
+}
+
+.modal-750 {
+    top: 8%;
+    width:750px !important;
+}
+
+.modal-800 {
+    top: 8%;
+    width:800px !important;
+}

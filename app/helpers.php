@@ -79,11 +79,9 @@ function getOs()
 
 function getip()
 {
-	if (getenv('HTTP_CLIENT_IP')) $ip = getenv('HTTP_CLIENT_IP');
-	else if (getenv('HTTP_X_FORWARDED_FOR')) $ip = getenv('HTTP_X_FORWARDED_FOR');
 	else if ($_SERVER['REMOTE_ADDR']) $ip = $_SERVER['REMOTE_ADDR'];
-	$long = sprintf("%u",ip2long($ip));
-    $ip   = $long ? $ip : '0.0.0.0';
+	else if (getenv('HTTP_CLIENT_IP')) $ip = getenv('HTTP_CLIENT_IP');
+	else if (getenv('HTTP_X_FORWARDED_FOR')) $ip = getenv('HTTP_X_FORWARDED_FOR');
 	return $ip;
 }
 

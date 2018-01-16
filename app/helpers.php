@@ -79,29 +79,23 @@ function getOs()
 
 function getip()
 {
-	else if ($_SERVER['REMOTE_ADDR']) $ip = $_SERVER['REMOTE_ADDR'];
+	if ($_SERVER['REMOTE_ADDR']) $ip = $_SERVER['REMOTE_ADDR'];
 	else if (getenv('HTTP_CLIENT_IP')) $ip = getenv('HTTP_CLIENT_IP');
 	else if (getenv('HTTP_X_FORWARDED_FOR')) $ip = getenv('HTTP_X_FORWARDED_FOR');
 	return $ip;
 }
+
 
 /**
 	二维数组转成一维
 */
 function tow2one($ar) {
 	if(!$ar) return;
-
 	$ks = array_keys($ar[0]);
-	$vs = array_values($ar[0]);
-
-	$k1 = $ks[0];
-	$k2 =  $ks[1];
-
-	foreach($ar as $k => $v) {
-		$arr[$v[$k1]] = $v[$k2];
-	}
-
+	$arr = array_column($ar, $ks[1], $ks[0]);
+//	printr($arr);die("d");
 	return $arr;
+
 }
 
 function get_array($sql)

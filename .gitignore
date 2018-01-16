@@ -1,12 +1,23 @@
 /node_modules
 /public/hot
-/public/storage
 storage/
 /vendor
 /.idea
 /.vagrant
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-.env
+
+# Word temporary
+~$*.doc*
+
+# Excel temporary
+~$*.xls*
+
+# Excel Backup File
+*.xlk
+
+# PowerPoint temporary
+~$*.ppt*
+
+# Visio autosave temporary files
+*.~vsd*
+
+

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -105,6 +105,8 @@ class UserController extends Controller
 		{
 			return redirect('users/info');
 		}
+
+//        echo bcrypt('123456'),'<br />';	 // laravel密码加密方式
 
 		if (!$request->has('name') || !$request->has('password'))
 		{

@@ -67,7 +67,8 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+//            'model' => App\User::class,           # app目录下的user.php
+            'model' => App\Models\User::class,      # app/models目录下的user.php
         ],
 
         // 'users' => [

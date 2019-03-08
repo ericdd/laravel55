@@ -34,6 +34,8 @@ Route::get('login', 'Admin\UserController@login')->name("login");
 Route::post('login', 'Admin\UserController@login');
 Route::get('logout', 'Admin\UserController@logout')->name("logout");
 
+//Route::get('uinfo', 'Admin\UserController@info');
+
 Route::group( ['middleware' => ['auth', 'isLogined']], function() {
 
 	Route::get('users/info', 'Admin\UserController@info');

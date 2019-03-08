@@ -14,6 +14,7 @@ class UserController extends Controller
 	{
 		perms_require(__METHOD__);
 		$result = User::latest()->orderby('id', 'desc')->paginate();
+//		die("sssste");
 		return view('users.index', compact('result'));
 	}
 
@@ -105,6 +106,8 @@ class UserController extends Controller
 		{
 			return redirect('users/info');
 		}
+		
+//		print_r($_POST);die("");
 
 //        echo bcrypt('123456'),'<br />';	 // laravel密码加密方式
 

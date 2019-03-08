@@ -239,8 +239,12 @@ function perms_require($names) {
  登录后写入必要session和缓存
 */
 function set_sessinfo($user=null) {
-	if(session('id')) return;
-	echo rand();
+	if(session('id')) {
+        return;
+    }
+    
+//	echo rand();
+	
 	if(!$user) $user = auth()->user();
 
 	app('session')->put("id", $user->id);

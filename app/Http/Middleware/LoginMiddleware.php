@@ -17,7 +17,6 @@ class LoginMiddleware
     public function handle($request, Closure $next)
     {
 
-
 		set_sessinfo($user) ;
         return $next($request);
 

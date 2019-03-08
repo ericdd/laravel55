@@ -48,8 +48,11 @@ $(function () {
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                             <li><a href="/login">Login</a></li>
+
+						<?php if(!app('session')->get("name")) { ?>
+							   <li><a href="/login">Login</a></li>
+						<?php } ?>
+
 
 						<?php if(app('session')->get("name")) { ?>
                             <li class="dropdown">

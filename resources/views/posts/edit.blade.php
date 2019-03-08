@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Post ')
+@section('title', 'Post编辑')
 
 @section('content')
 
@@ -31,4 +31,5 @@
             </div>
         </div>
     </div>
+	</div>
 @endsection
